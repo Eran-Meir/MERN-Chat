@@ -1,17 +1,10 @@
 // index.ts
 import express from "express";
 import dotenv from "dotenv";
-import authRoutes from "./routes/auth.route.ts";
-import {connectDB} from "./lib/db.ts";
+import authRoutes from "@routes/auth.route";
+import {connectDB} from "@lib/db";
 
 dotenv.config();
-
-// *** DEBUG LOGS HERE ***
-console.log('--- ENV Debugging ---');
-console.log('Current Working Directory:', process.cwd());
-console.log('Value of MONGODB_URI from process.env:', process.env.MONGODB_URI);
-console.log('--- End ENV Debugging ---');
-
 
 const app = express();
 const PORT = process.env.PORT || 5001;
