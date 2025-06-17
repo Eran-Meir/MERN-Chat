@@ -10,5 +10,10 @@ export const PASSWORD = {
 };
 
 export const USER = {
-    ERROR_MESSAGE: 'User already exists',
+    EXISTS_ERROR_MESSAGE: 'User already exists',
+    DATA_ERROR_MESSAGE: 'Invalid username or password',
 };
+
+export const JWT = {
+    EXPIRES_IN: 604800000 // 7 * 24 * 60 * 60 * 1000 ms = 7 days
+}
