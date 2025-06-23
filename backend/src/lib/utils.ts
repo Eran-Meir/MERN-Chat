@@ -1,18 +1,18 @@
 import {Response} from "express";
 import jwt from "jsonwebtoken";
-import {JWT} from "@constants/constants.ts";
+import {JWT} from "@constants/constants";
+import {Types} from "mongoose";
 
-export const generateToken = (userId: string, res: Response): string => {
+
+export const generateToken = (userId: Types.ObjectId, res: Response): string => {
     const JWT_SECRET = process.env.JWT_SECRET;
     if (!JWT_SECRET) {
         throw new Error('JWT_SECRET not defined in environment variables');
     }
 
-    const token = jwt.sign({ userId }, JWT_SECRET, { expiresIn: JWT.EXPIRES_IN });
-
     const token = jwt.sign(
         {userId},
-        process.env.JWT_SECRET as string, // Assure TypeScript that this env var exists
+        JWT_SECRET as string, // Assure TypeScript that this env var exists
         {expiresIn: JWT.EXPIRES_IN}
     );
 

@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import {LOG_MESSAGES} from "@constants/constants.ts"; // Adjust path as needed
+import {LOG_MESSAGES} from "@constants/constants"; // Adjust path as needed
 
 
 export const connectDB = async () => {

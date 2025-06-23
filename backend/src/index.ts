@@ -3,7 +3,7 @@ import express from "express";
 import dotenv from "dotenv";
 import authRoutes from "@routes/auth.route";
 import {connectDB} from "@lib/db";
-import {LOG_MESSAGES} from "@constants/constants.ts"; // Adjust path as needed
+import {LOG_MESSAGES} from "@constants/constants"; // Adjust path as needed
 
 dotenv.config();
 
