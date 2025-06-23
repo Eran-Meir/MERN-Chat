@@ -1,5 +1,5 @@
 import {Request, Response} from 'express';
-import {PASSWORD, USER} from "@constants/constants";
+import {consoleLogError, PASSWORD, USER} from "@constants/constants";
 import User from "@models/user.model";
 import bcrypt from "bcryptjs";
 import {generateToken} from "@lib/utils";
@@ -37,7 +37,7 @@ export const signup = async (req: Request, res: Response): Promise<void> => {
         });
 
     } catch (error) {
-        console.log(USER.SIGNUP_ERROR_MESSAGE, error instanceof Error ? error.message : String(error));
+        consoleLogError(`${USER.SIGNUP_ERROR_MESSAGE} ` + (error instanceof Error ? error.message : String(error)));
         res.status(500).json({message: USER.SIGNUP_ERROR_MESSAGE});
     }
 };

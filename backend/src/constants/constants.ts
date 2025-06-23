@@ -1,7 +1,18 @@
 export const LOG_MESSAGES = {
     SUCCESS: "--- SUCCESS ---",
-    ERROR: "--- ERROR ---",
+    ERROR: "--- ERROR ---  ",
+    DEBUG: "--- DEBUG ---  ",
 };
+
+export function consoleLogError(message: string) {
+    console.log(`${LOG_MESSAGES.ERROR} ${message}`);
+}
+export function consoleLogSuccess(message: string) {
+    console.log(`${LOG_MESSAGES.SUCCESS} ${message}`);
+}
+export function consoleLogDebug(message: string) {
+    console.log(`${LOG_MESSAGES.DEBUG} ${message}`);
+}
 
 const PASSWORD_MIN_LENGTH = 6;
 export const PASSWORD = {
