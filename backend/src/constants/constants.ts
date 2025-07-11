@@ -5,13 +5,18 @@ export const LOG_MESSAGES = {
 };
 
 export function consoleLogError(message: string) {
-    console.log(`${LOG_MESSAGES.ERROR} ${message}`);
+    const timestamp = new Date().toLocaleString();
+    console.log(`${LOG_MESSAGES.ERROR} [${timestamp}] ${message}`);
 }
+
 export function consoleLogSuccess(message: string) {
-    console.log(`${LOG_MESSAGES.SUCCESS} ${message}`);
+    const timestamp = new Date().toLocaleString();
+    console.log(`${LOG_MESSAGES.SUCCESS} [${timestamp}] ${message}`);
 }
+
 export function consoleLogDebug(message: string) {
-    console.log(`${LOG_MESSAGES.DEBUG} ${message}`);
+    const timestamp = new Date().toLocaleString();
+    console.log(`${LOG_MESSAGES.DEBUG} [${timestamp}] ${message}`);
 }
 
 const PASSWORD_MIN_LENGTH = 6;
@@ -28,13 +33,18 @@ export const SIGNUP_ERROR = {
 };
 
 export const LOGIN_ERROR = {
-    NO_SUCH_USER: 'Invalid login or password!',
-    WRONG_PASSWORD: 'Invalid login or password!',
+    USER_DOESNT_EXIST: 'No such user!',
+    WRONG_PASSWORD: 'Wrong password!',
+    USER_OR_PASSWORD: 'Invalid login or password!',
     GENERAL_LOGIN_ERROR: 'Internal Server Error!',
 };
 
+export const LOGOUT_ERROR: string = "Error in the logout controller";
+
 export const SUCCESS_MESSAGE = {
+    SIGNUP: `Signup successful!`,
     LOGIN: `Login successful!`,
+    LOGOUT: `Logged out successfuly!`,
 }
 
 export const JWT = {
