@@ -20,11 +20,22 @@ export const PASSWORD = {
     ERROR_MESSAGE: `Password is too short, it has to be at least ${PASSWORD_MIN_LENGTH} characters`,
 };
 
-export const USER = {
-    EXISTS_ERROR_MESSAGE: 'User already exists',
-    DATA_ERROR_MESSAGE: 'Invalid username or password',
-    SIGNUP_ERROR_MESSAGE: 'Error in the signup process',
+export const SIGNUP_ERROR = {
+    USER_EXISTS: 'User already exists',
+    FULLNAME_EMAIL_PASSWORD_NULL: 'You must fill all the fields!',
+    DATA_ERROR: 'Invalid username or password',
+    GENERAL_SIGNUP_ERROR: 'Error in the signup process',
 };
+
+export const LOGIN_ERROR = {
+    NO_SUCH_USER: 'Invalid login or password!',
+    WRONG_PASSWORD: 'Invalid login or password!',
+    GENERAL_LOGIN_ERROR: 'Internal Server Error!',
+};
+
+export const SUCCESS_MESSAGE = {
+    LOGIN: `Login successful!`,
+}
 
 export const JWT = {
     EXPIRES_IN: 604800000 // 7 * 24 * 60 * 60 * 1000 ms = 7 days
