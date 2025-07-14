@@ -111,3 +111,7 @@ export const logout = (req: Request, res: Response): void => {
         res.status(500).json({message: LOGOUT_ERROR});
     }
 };
+
+export const updateProfile = async (req: Request, res: Response): Promise<void> => {
+
+}
